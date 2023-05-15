@@ -1,9 +1,6 @@
 # Special_Topics_in_AI-MidTerm
-
 ### Name: 이제연
-
 ### SUID: 72210298
-
 ### Original Paper: ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
 [Victor Ion Butoi](https://victorbutoi.github.io)\*,
 [Jose Javier Gonzalez Ortiz](https://josejg.com)\*,
