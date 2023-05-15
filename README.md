@@ -23,33 +23,45 @@ can be unhelpful in the medical domain, likely due to the differences in data si
 UniverSeg learn how to exploit an input set of labeled examples that specify the segmentation task, to segment a new biomedical image in one forward pass.
 
 ```python
-# Convert the target image to a tensor(B, 1, H, W).
-target = E.rearrange(target_image, "B 1 H W -> B 1 1 H W")
-# Concat the support images and labels to a tensor(B, 2, H, W).
-support = torch.cat([support_images, support_labels], dim=2)
-pass_through = []
-
+# Set the encoder blocks using cross_conv
+enc_blocks = []
 for encoder_blocks do
-  target, support = encoder_block(target, support)
+  enc_blocks.append(CrossConv2D(encoder_blocks))
+
+# Set the decoder blocks using cross_conv
+dec_blocks = []
+if decoder_blocks is None:
+  decoder_blocks = encoder_blocks[::-1]
+for decoder_blocks do
+  dec_blocks.append(CrossConv2D(decoder_blocks))
+
+# Convert the target image to a tensor(B, 1, H, W).
+target = rearrange(target_image, "B 1 H W -> B 1 1 H W")
+# Concat the support images and labels to a tensor(B, 2, H, W).
+support = cat([support_images, support_labels], dim=2)
+
+pass_through = []
+for enc_blocks do
+  target, support = enc_block(target, support)
     if encoder_block != last_encoder_block:
     # store the intermediate output in the pass_through list.
       pass_through.append((target, support))
   # Downsample the target and support tensors.
-  target = vmap(self.downsample, target)
-  support = vmap(self.downsample, support)
+  target = downsample(target)
+  support = downsample(support)
 
 for decoder_blocks do
   target_skip, support_skip = pass_through.pop()
   # Upsample the target and support tensors.
-  target = torch.cat([vmap(self.upsample, target), target_skip], dim=2)
-  support = torch.cat([vmap(self.upsample, support), support_skip], dim=2)
+  target = upsample(target, target_skip, dim=2)
+  support = upsample(support, support_skip, dim=2)
   # Apply the decoder block to the target and support tensors.
-  target, support = decoder_block(target, support)
-  
+  target, support = dec_block(target, support)
+
 # Convert the target tensor to a tensor(B, C, H, W).
 target = rearrange(target, "B 1 C H W -> B C H W")
 # Apply the output convolution layer to the target tensor.
-target = self.out_conv(target)
+target = Conv2D(target)
 
 return target
 ```
