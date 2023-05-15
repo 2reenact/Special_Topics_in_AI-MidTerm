@@ -11,6 +11,8 @@
  
 [![Explore UniverSeg in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10Vrbb6kyelXeGlGbmJhyhNkG9YwnwiBY)<br>
 
+## 1. Introduction
+
 ![network](https://raw.githubusercontent.com/JJGO/UniverSeg/gh-pages/assets/images/network-architecture.png)
 
 UniverSeg is an approach to learning a single general medical-image segmentation model that performs well on a variety of tasks without any retraining, including tasks that are substantially different from those seen at traning time.
@@ -20,8 +22,24 @@ can be unhelpful in the medical domain, likely due to the differences in data si
 
 UniverSeg learn how to exploit an input set of labeled examples that specify the segmentation task, to segment a new biomedical image in one forward pass.
 
+```
 
-## Getting Started
+```
+
+## 2. Installation
+- **With pip**:
+```shell
+pip install git+https://github.com/JJGO/UniverSeg.git
+```
+
+- **Manually**:
+```shell
+git clone https://github.com/JJGO/UniverSeg
+python -m pip install -r ./UniverSeg/requirements.txt
+export PYTHONPATH="$PYTHONPATH:$(realpath ./UniverSeg)"
+```
+
+## 3. Run
 
 The universeg architecture is described in the [`model.py`](https://github.com/2reenact/Special_Topics_in_AI-MidTerm/blob/master/universeg/model.py#L125) file.
 Authors provide model weights a part of their [release](https://github.com/JJGO/UniverSeg/releases/tag/weights)).
@@ -42,8 +60,3 @@ prediction = model(
 ```
 For all inputs ensure that pixel values are min-max normalized to the $[0,1]$ range and that the spatial dimensions are $(H, W) = (128, 128)$.
 
-
-## Pseudocode of UniverSeg
-```
-
-```
