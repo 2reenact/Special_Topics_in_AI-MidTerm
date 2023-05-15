@@ -22,7 +22,7 @@ can be unhelpful in the medical domain, likely due to the differences in data si
 
 UniverSeg learn how to exploit an input set of labeled examples that specify the segmentation task, to segment a new biomedical image in one forward pass.
 
-```
+```python
 # Convert the target image to a tensor(B, 1, H, W).
 target = E.rearrange(target_image, "B 1 H W -> B 1 1 H W")
 # Concat the support images and labels to a tensor(B, 2, H, W).
