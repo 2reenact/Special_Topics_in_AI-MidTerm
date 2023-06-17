@@ -69,12 +69,12 @@ return target
 ## 2. Installation
 - **With pip**:
 ```shell
-pip install git+https://github.com/JJGO/UniverSeg.git
+pip install git+https://github.com/JJGO/Special_Topics_in_AI-MidTerm.git
 ```
 
 - **Manually**:
 ```shell
-git clone https://github.com/JJGO/UniverSeg
+git clone https://github.com/JJGO/Special_Topics_in_AI-MidTerm
 python -m pip install -r ./UniverSeg/requirements.txt
 export PYTHONPATH="$PYTHONPATH:$(realpath ./UniverSeg)"
 ```
