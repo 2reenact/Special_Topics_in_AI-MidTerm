@@ -74,7 +74,7 @@ pip install git+https://github.com/2reenact/Special_Topics_in_AI-MidTerm.git
 
 - **Manually**:
 ```shell
-git clone https://github.com/JJGO/Special_Topics_in_AI-MidTerm
+git clone https://github.com/2reenact/Special_Topics_in_AI-MidTerm
 python -m pip install -r ./UniverSeg/requirements.txt
 export PYTHONPATH="$PYTHONPATH:$(realpath ./UniverSeg)"
 ```
