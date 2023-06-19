@@ -1,4 +1,4 @@
-# Special_Topics_in_AI_MidTerm
+# Special_Topics_in_AI_Final
 ### Name: 이제연
 ### SUID: 72210298
 ### Original Paper: ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
