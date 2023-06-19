@@ -69,7 +69,7 @@ return target
 ## 2. Installation
 - **With pip**:
 ```shell
-pip install git+https://github.com/JJGO/Special_Topics_in_AI-MidTerm.git
+pip install git+https://github.com/2reenact/Special_Topics_in_AI-MidTerm.git
 ```
 
 - **Manually**:
