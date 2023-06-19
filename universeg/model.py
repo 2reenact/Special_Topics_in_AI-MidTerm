@@ -30,7 +30,7 @@ class ConvOp(nn.Sequential):
     in_channels: int
     out_channels: int
     kernel_size: size2t = 3
-    nonlinearity: Optional[str] = "LeakyReLU"
+    nonlinearity: Optional[str] = "ReLU"
     init_distribution: Optional[str] = "kaiming_normal"
     init_bias: Union[None, float, int] = 0.0
 
@@ -60,7 +60,7 @@ class CrossOp(nn.Module):
     in_channels: size2t
     out_channels: int
     kernel_size: size2t = 3
-    nonlinearity: Optional[str] = "LeakyReLU"
+    nonlinearity: Optional[str] = "ReLU"
     init_distribution: Optional[str] = "kaiming_normal"
     init_bias: Union[None, float, int] = 0.0
 
