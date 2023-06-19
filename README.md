@@ -22,6 +22,13 @@ can be unhelpful in the medical domain, likely due to the differences in data si
 
 UniverSeg learn how to exploit an input set of labeled examples that specify the segmentation task, to segment a new biomedical image in one forward pass.
 
+제 연구분야와 조금 거리가 있는 주제다보니 사실 어떻게 해서 개선할 수 있겠다는 생각은 하지 못했습니다.
+다만 제가 논문을 읽었을때 마지막 부분에 1x1 convolution을 한번 수행하는 부분이 꼭 필요할까 생각이 들어서 그 부분을 없애고 돌려보고 싶었으나
+파이썬 코드 자체도 그래프 그릴때 빼고는 사용 경험이 없다보니 코드 흐름이 어떻게 진행되는지 잘 감이 잡히지 않아서 과제는 제대로 진행하기 힘들 것 같습니다..
+
+연구분야가 아니더라도 인공지능 분야에 대해 조금은 알고 있자는 마음으로 항상 수업 중 하나는 인공지능 분야의 수업을 수강하고 있는데
+딥러닝 모델에 대해 정확히 이해하지는 못했더라도 어떤 변천사를 겪으며 발전하게 됐는지 이해하기 쉽게 설명해주셔서 감사했습니다.
+
 ```python
 # Set the encoder blocks using cross_conv
 enc_blocks = []
