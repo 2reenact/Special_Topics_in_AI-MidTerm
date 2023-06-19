@@ -1,4 +1,4 @@
-# Special_Topics_in_AI-MidTerm
+# Special_Topics_in_AI_MidTerm
 ### Name: 이제연
 ### SUID: 72210298
 ### Original Paper: ["UniverSeg: Universal Medical Image Segmentation"](http://arxiv.org/abs/2304.06131).
@@ -69,19 +69,19 @@ return target
 ## 2. Installation
 - **With pip**:
 ```shell
-pip install git+https://github.com/2reenact/Special_Topics_in_AI-MidTerm.git
+pip install git+https://github.com/2reenact/Special_Topics_in_AI_MidTerm.git
 ```
 
 - **Manually**:
 ```shell
-git clone https://github.com/2reenact/Special_Topics_in_AI-MidTerm
+git clone https://github.com/2reenact/Special_Topics_in_AI_MidTerm
 python -m pip install -r ./UniverSeg/requirements.txt
 export PYTHONPATH="$PYTHONPATH:$(realpath ./UniverSeg)"
 ```
 
 ## 3. Run
 
-The universeg architecture is described in the [`model.py`](https://github.com/2reenact/Special_Topics_in_AI-MidTerm/blob/master/universeg/model.py#L125) file.
+The universeg architecture is described in the [`model.py`](https://github.com/2reenact/Special_Topics_in_AI_MidTerm/blob/master/universeg/model.py#L125) file.
 Authors provide model weights a part of their [release](https://github.com/JJGO/UniverSeg/releases/tag/weights)).
 
 To instantiate the UniverSeg model (and optionally use provided weights):
